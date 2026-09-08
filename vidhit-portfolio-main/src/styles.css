@@ -1,0 +1,104 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-electric: var(--electric);
+  --color-deep-purple: var(--deep-purple);
+  --color-silver: var(--silver);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0 0 0);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.14 0.02 270);
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.14 0.02 270);
+  --popover-foreground: oklch(1 0 0);
+  --primary: oklch(0.68 0.22 265);
+  --primary-foreground: oklch(0 0 0);
+  --secondary: oklch(0.18 0.03 280);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.16 0.02 270);
+  --muted-foreground: oklch(0.72 0.02 260);
+  --accent: oklch(0.5 0.24 295);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.6 0.24 27);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.24 0.04 280);
+  --input: oklch(0.2 0.03 280);
+  --ring: oklch(0.68 0.22 265);
+  --electric: oklch(0.72 0.2 245);
+  --deep-purple: oklch(0.48 0.25 300);
+  --silver: oklch(0.85 0.01 260);
+
+  --gradient-primary: linear-gradient(135deg, var(--electric), var(--deep-purple));
+  --gradient-radial: radial-gradient(1200px circle at 20% 0%, color-mix(in oklab, var(--electric) 20%, transparent), transparent 40%),
+                     radial-gradient(1000px circle at 80% 30%, color-mix(in oklab, var(--deep-purple) 22%, transparent), transparent 45%);
+  --shadow-glow: 0 0 40px -8px color-mix(in oklab, var(--electric) 55%, transparent);
+  --shadow-purple: 0 0 40px -8px color-mix(in oklab, var(--deep-purple) 55%, transparent);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html, body {
+    background-color: #000000;
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--electric) 40%, transparent);
+    color: white;
+  }
+}
+
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--electric) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--deep-purple) 8%, transparent) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+@utility text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility border-glow {
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--electric) 30%, transparent),
+              0 10px 40px -12px color-mix(in oklab, var(--deep-purple) 40%, transparent);
+}
