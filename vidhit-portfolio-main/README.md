@@ -104,17 +104,7 @@ Act as an expert frontend developer and UI/UX designer. Create a premium, respon
 
 Ensure the entire application code uses valid HTML `<a>` tags with `rel="noopener noreferrer"` for the hyperlinks so that they function properly on mobile and desktop web browsers.
 
-This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://vidhit-portfolio.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/5a9ff11d-4fb0-4c6d-85e9-b51ee468e2fc).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
